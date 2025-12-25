@@ -15,10 +15,11 @@ namespace qlks
         public Form1()
         {
             InitializeComponent();
-            //fgcngu7y6
+            //65798609
         }
     }
 }
+
 
 
 
