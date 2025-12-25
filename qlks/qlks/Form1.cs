@@ -15,8 +15,9 @@ namespace qlks
         public Form1()
         {
             InitializeComponent();
-            //fgc
+            //fgcngu
         }
     }
 }
+
 
