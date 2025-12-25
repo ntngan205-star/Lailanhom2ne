@@ -15,12 +15,6 @@ namespace qlks
         public Form1()
         {
             InitializeComponent();
-            //65798609kk
         }
     }
 }
-
-
-
-
-

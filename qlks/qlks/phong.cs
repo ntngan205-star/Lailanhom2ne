@@ -20,11 +20,11 @@ namespace qlks
         KetNoiDuLieu kn=new KetNoiDuLieu();
 
 
-        private void Load_GR()
+        public void Load_GR()
         {
 
             string sqlPhong = "select Phong.MaPhong, Phong.SoPhong,Phong.Tang, HangPhong.MaHP,LoaiPhong.TenLP ,KieuPhong.TenKP, TrangThai.TenTT from Phong \r\ninner join HangPhong on HangPhong.MaHP= Phong.MaHP\r\ninner join KieuPhong on HangPhong.MaKP=KieuPhong.MaKP\r\ninner join LoaiPhong on HangPhong.MaLP=LoaiPhong.MaLP\r\ninner join TrangThai on Phong.MaTT=TrangThai.MaTT";
-            
+            //string sqlPhong = "select * from Phong";
             //string sqlTinhTrang = "select * from TinhTrang";
             dgvPhong.DataSource = kn.TaoBang(sqlPhong);
 
@@ -57,6 +57,7 @@ namespace qlks
         {
             kn.Myconn();
             Load_GR();
+            //Them_or_Sua = "0";
         }
 
         public static string Them_or_Sua = null;
@@ -70,6 +71,7 @@ namespace qlks
 
             Them_or_Sua = "0";
 
+            Load_GR();
         }
 
         private void btnSua_Click(object sender, EventArgs e)
@@ -88,9 +90,10 @@ namespace qlks
             frm.ShowDialog();
             //fr.Show();
             //Load_Data();
-
+            
 
             Them_or_Sua = "1";
+            Load_GR();
         }
     }
 }

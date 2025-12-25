@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             this.dgvPhong = new System.Windows.Forms.DataGridView();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnSua = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.MaPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoPhong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tang = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -36,10 +40,6 @@
             this.TenLP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenKP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenTT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnThem = new System.Windows.Forms.Button();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPhong)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +61,46 @@
             this.dgvPhong.RowTemplate.Height = 28;
             this.dgvPhong.Size = new System.Drawing.Size(1017, 484);
             this.dgvPhong.TabIndex = 0;
+            // 
+            // btnThem
+            // 
+            this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Location = new System.Drawing.Point(715, 63);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(147, 88);
+            this.btnThem.TabIndex = 1;
+            this.btnThem.Text = "Thêm";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
+            // 
+            // btnSua
+            // 
+            this.btnSua.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Location = new System.Drawing.Point(894, 63);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(147, 88);
+            this.btnSua.TabIndex = 2;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(84, 76);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(359, 51);
+            this.textBox1.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(80, 53);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(181, 20);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Tìm kiếm theo số phòng:";
             // 
             // MaPhong
             // 
@@ -111,46 +151,6 @@
             this.TenTT.MinimumWidth = 8;
             this.TenTT.Name = "TenTT";
             // 
-            // btnThem
-            // 
-            this.btnThem.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(715, 63);
-            this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(147, 88);
-            this.btnThem.TabIndex = 1;
-            this.btnThem.Text = "Thêm";
-            this.btnThem.UseVisualStyleBackColor = true;
-            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
-            // 
-            // btnSua
-            // 
-            this.btnSua.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSua.Location = new System.Drawing.Point(894, 63);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(147, 88);
-            this.btnSua.TabIndex = 2;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = true;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(84, 76);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(359, 51);
-            this.textBox1.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(80, 53);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(181, 20);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Tìm kiếm theo số phòng:";
-            // 
             // frmPhong
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -173,6 +173,10 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dgvPhong;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnSua;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn SoPhong;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tang;
@@ -180,9 +184,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn TenLP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenKP;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenTT;
-        private System.Windows.Forms.Button btnThem;
-        private System.Windows.Forms.Button btnSua;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
     }
 }

@@ -22,39 +22,11 @@ namespace qlks
         public void Load_GR()
         {
 
-            //string sqlPhong = "select Phong.MaPhong, Phong.SoPhong,Phong.Tang, HangPhong.MaHP,LoaiPhong.TenLP ,KieuPhong.TenKP, TrangThai.TenTT from Phong \r\ninner join HangPhong on HangPhong.MaHP= Phong.MaHP\r\ninner join KieuPhong on HangPhong.MaKP=KieuPhong.MaKP\r\ninner join LoaiPhong on HangPhong.MaLP=LoaiPhong.MaLP\r\ninner join TrangThai on Phong.MaTT=TrangThai.MaTT";
-
             string sqlKhachHang = "select * from KhachHang";
             dgvKhachHang.DataSource = kn.TaoBang(sqlKhachHang);
 
             
         }
-
-        //public static void Load_GRKhachHang(DataTable )
-        //{
-
-        //    //string sqlPhong = "select Phong.MaPhong, Phong.SoPhong,Phong.Tang, HangPhong.MaHP,LoaiPhong.TenLP ,KieuPhong.TenKP, TrangThai.TenTT from Phong \r\ninner join HangPhong on HangPhong.MaHP= Phong.MaHP\r\ninner join KieuPhong on HangPhong.MaKP=KieuPhong.MaKP\r\ninner join LoaiPhong on HangPhong.MaLP=LoaiPhong.MaLP\r\ninner join TrangThai on Phong.MaTT=TrangThai.MaTT";
-
-        //    string sqlKhachHang = "select * from KhachHang";
-        //    dgvKhachHang.DataSource = kn.TaoBang(sqlKhachHang);
-
-
-        //}
-        //public static void timkiem(DataGridView dgvKhachHang, string tukhoa, KetNoiDuLieu kn)
-        //{
-        //    string chuoi = "select * from KhachHang where MaKH like N'%" + tukhoa + "%'";
-        //    dgvKhachHang.DataSource = kn.TaoBang(chuoi);
-        //}
-
-        public void Load_GR_KhachHang(DataGridView dgvKhachHang, KetNoiDuLieu kn)
-        {
-            string sqlKhachHang = "select * from KhachHang";
-            dgvKhachHang.DataSource = kn.TaoBang(sqlKhachHang);
-        }
-
-
-        //void Load_GR_KhachHang(DataGridView dgvKhachHang, KetNoiDuLieu kn)=frmKhachHang.Load_GR_KhachHang(DataGridView dgvKhachHang, KetNoiDuLieu kn)
-        // IDU = frmLogin.IDU;
 
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
@@ -62,6 +34,7 @@ namespace qlks
             {
                 kn.Myconn();
                 Load_GR();
+                dgvKhachHang.AllowUserToAddRows = false;
             }
             catch (Exception)
             {
@@ -73,15 +46,49 @@ namespace qlks
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            //this.Hide();
-            //ShowAddForm();
+            
             Form fr = new frmThemKhachHang();
-            fr.ShowDialog();
-            fr.Show();
-            Load_GR();
+            if (fr.ShowDialog() == DialogResult.OK)
+            {
+                Load_GR();
+            }
+        }
 
-            //PopUpForm form = new PopUpForm(this);
-            //form.Show();
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            int r = dgvKhachHang.CurrentCell.RowIndex;
+            using (frmThemKhachHang frm = new frmThemKhachHang(dgvKhachHang.Rows[r].Cells[0].Value.ToString(), dgvKhachHang.Rows[r].Cells[1].Value.ToString(),
+                dgvKhachHang.Rows[r].Cells[2].Value.ToString(), dgvKhachHang.Rows[r].Cells[3].Value.ToString(), dgvKhachHang.Rows[r].Cells[4].Value.ToString(),
+                dgvKhachHang.Rows[r].Cells[5].Value.ToString()))
+                //{
+                //if (frm.ShowDialog() == DialogResult.OK)
+                //{
+                //    //dgvPhong.Rows[r].Cells[0].Value.ToString() = frm.getValue;
+                //    //frm.Strg = dgvPhong.Rows[r].Cells[0].Value.ToString();
+                //    Load_GR();
+                //}
+            //}
+            //Form fr = new frmSuaPhong();
+            frm.ShowDialog();
+            Load_GR();
+            //fr.Show();
+            //Load_Data();
+
+
+            // Them_or_Sua = "1";
+
+        }
+
+        public void timkiem(DataGridView dgvKhachHang, string tukhoa)
+        {
+            string chuoi = "select * from KhachHang where TenKH like N'%" + tukhoa + "%'";
+            dgvKhachHang.DataSource = kn.TaoBang(chuoi);
+        }
+
+        private void txtTimKiem_TextChanged(object sender, EventArgs e)
+        {
+            string tukhoa = txtTimKiem.Text;
+            timkiem(dgvKhachHang, tukhoa);
         }
     }
 }

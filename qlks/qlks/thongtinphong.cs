@@ -25,27 +25,27 @@ namespace qlks
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            try
-            {
+            //try
+            //{
                 ;
                 string sqlThem = "insert into Phong (MaPhong, SoPhong, Tang, MaHP, MaTT ) values (@MP,@SP,@Tang,@MHP,@MTT)";
                 cmd = new SqlCommand(sqlThem, kn.conn);
                 cmd.Parameters.Clear();
                 cmd.Parameters.Add("@MP", SqlDbType.Int).Value = txtMaPhong.Text.Trim();
-                cmd.Parameters.Add("@SP", SqlDbType.NVarChar).Value = txtSoPhong.Text.Trim();
+                cmd.Parameters.Add("@SP", SqlDbType.Int).Value = txtSoPhong.Text.Trim();
                 cmd.Parameters.Add("@Tang", SqlDbType.Int).Value = txtTang.Text.Trim();
-                cmd.Parameters.Add("@MHP", SqlDbType.Int).Value = txtHangPhong.Text.Trim();
-                cmd.Parameters.Add("@MTT", SqlDbType.NVarChar).Value = txtTrangThai.Text.Trim();
+                cmd.Parameters.Add("@MHP", SqlDbType.Char).Value = txtHangPhong.Text.Trim();
+                cmd.Parameters.Add("@MTT", SqlDbType.Int).Value = txtTrangThai.Text.Trim();
                 //cmd.Parameters.Add("@SDT", SqlDbType.Int).Value = txtSoDienThoai.Text.Trim();
 
                 cmd.ExecuteNonQuery();
                 
                 MessageBox.Show("thêm thành công");
-            }
-            catch
-            {
-                MessageBox.Show("không thành công");
-            }
+            //}
+            //catch
+            //{
+            //    MessageBox.Show("không thành công");
+            //}
 
             
         }
@@ -85,12 +85,15 @@ namespace qlks
         private void frmThongTinPhong_Load(object sender, EventArgs e)
         {
             kn.Myconn();
+
             if (Them_or_Sua == "1")
             {
                 btnSua.Enabled = false;
                 btnThem.Enabled = true;
             }
-            else
+
+
+            if(Them_or_Sua == "0")
             {
                 btnSua.Enabled = true;
                 btnThem.Enabled = false;
