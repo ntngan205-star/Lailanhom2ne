@@ -1,0 +1,11 @@
+D:\Lập trình ADO.Net\tren_lop\nhom2huongdan\nhom2huongdan\bin\Debug\nhom2huongdan.exe.config
+D:\Lập trình ADO.Net\tren_lop\nhom2huongdan\nhom2huongdan\bin\Debug\nhom2huongdan.exe
+D:\Lập trình ADO.Net\tren_lop\nhom2huongdan\nhom2huongdan\bin\Debug\nhom2huongdan.pdb
+D:\Lập trình ADO.Net\tren_lop\nhom2huongdan\nhom2huongdan\obj\Debug\nhom2huongdan.csproj.AssemblyReference.cache
+D:\Lập trình ADO.Net\tren_lop\nhom2huongdan\nhom2huongdan\obj\Debug\nhom2huongdan.frmKhachHang.resources
+D:\Lập trình ADO.Net\tren_lop\nhom2huongdan\nhom2huongdan\obj\Debug\nhom2huongdan.Properties.Resources.resources
+D:\Lập trình ADO.Net\tren_lop\nhom2huongdan\nhom2huongdan\obj\Debug\nhom2huongdan.frmTTinKhachHang.resources
+D:\Lập trình ADO.Net\tren_lop\nhom2huongdan\nhom2huongdan\obj\Debug\nhom2huongdan.csproj.GenerateResource.cache
+D:\Lập trình ADO.Net\tren_lop\nhom2huongdan\nhom2huongdan\obj\Debug\nhom2huongdan.csproj.CoreCompileInputs.cache
+D:\Lập trình ADO.Net\tren_lop\nhom2huongdan\nhom2huongdan\obj\Debug\nhom2huongdan.exe
+D:\Lập trình ADO.Net\tren_lop\nhom2huongdan\nhom2huongdan\obj\Debug\nhom2huongdan.pdb
